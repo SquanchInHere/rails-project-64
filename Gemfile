@@ -58,7 +58,6 @@ group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'slim_lint'
   gem 'sqlite3'
   gem 'web-console'
 
@@ -80,7 +79,11 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+gem 'devise', '~> 4.9'
+gem 'i18n', '~> 1.14'
 gem 'sentry-rails'
 gem 'sentry-ruby'
+gem 'simple_form', '~> 5.3'
 gem 'slim'
+gem 'slim_lint'
 gem 'slim-rails'
