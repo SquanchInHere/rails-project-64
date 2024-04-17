@@ -58,7 +58,7 @@ group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.4'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
