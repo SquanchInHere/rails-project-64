@@ -79,6 +79,7 @@ group :test do
   gem 'minitest-power_assert'
   gem 'selenium-webdriver'
 end
+
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'slim'

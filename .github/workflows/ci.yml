@@ -16,13 +16,13 @@ jobs:
           ruby-version: 3.2
 
       - name: Install dependencies
-        run: bundle install
+        run: make install
 
       - name: Run Rubocop
-        run: bundle exec rubocop
+        run: make lint
 
       - name: Run Slim Lint
-        run: bundle exec slim-lint
+        run: make slim_lint
 
       - name: Run tests
-        run: bundle exec rails test
+        run: make test
