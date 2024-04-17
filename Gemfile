@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
-
-gem 'rubocop-rake'
+gem 'rubocop'
 gem 'rubocop-rails'
+gem 'rubocop-rake'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -54,10 +56,11 @@ end
 
 group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'slim_lint'
   gem 'sqlite3'
   gem 'web-console'
-  gem 'slim_lint'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -73,7 +76,10 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'minitest-power_assert'
   gem 'selenium-webdriver'
 end
-
+gem 'sentry-rails'
+gem 'sentry-ruby'
+gem 'slim'
 gem 'slim-rails'
