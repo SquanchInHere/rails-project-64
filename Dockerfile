@@ -19,7 +19,8 @@ FROM base as build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential curl git libvips node-gyp pkg-config python-is-python3 postgresql libpq-dev
+    apt-get install --no-install-recommends -y build-essential curl git libvips node-gyp pkg-config python-is-python3 postgresql postgresql-contrib libpq-dev && \
+    dpkg -l | grep libpq-dev
 
 # Install JavaScript dependencies
 ARG NODE_VERSION=21.6.2
@@ -55,8 +56,10 @@ FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libsqlite3-0 libvips && \
+    apt-get install -y curl libsqlite3-0 libvips postgresql postgresql-contrib libpq-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN ruby -v
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
