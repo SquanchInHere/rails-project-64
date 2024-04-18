@@ -23,5 +23,5 @@ test:
 production:
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= Rails.application.credentials.production_database_url %>
+  url: <%= Rails.application.credentials.production[:db_connection] %>
 
