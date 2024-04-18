@@ -55,12 +55,14 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 FROM base
 
 # Start PostgreSQL
-#RUN service postgresql start || true
+RUN service postgresql start || true
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
     apt-get install -y curl libsqlite3-0 libvips postgresql postgresql-contrib libpq-dev && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+RUN ruby -v
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
