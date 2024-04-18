@@ -68,8 +68,8 @@ group :development do
   # gem "spring"
 end
 
+gem 'pg'
 group :production do
-  gem 'pg'
 end
 
 group :test do
