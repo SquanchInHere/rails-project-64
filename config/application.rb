@@ -23,5 +23,6 @@ module RailsProject64
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    Rails.application.credentials.config[:key_path] = 'config/master.key'
   end
 end
