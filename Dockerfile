@@ -56,7 +56,6 @@ FROM base
 
 # Start PostgreSQL
 RUN service postgresql start || true
-RUN pg_ctl start
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
