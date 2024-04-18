@@ -54,7 +54,9 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 # Final stage for app image
 FROM base
 
-RUN service postgresql start
+# Start PostgreSQL
+RUN service postgresql start || true
+RUN pg_ctl start
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
