@@ -1,5 +1,5 @@
 doctype html
-html
+html.h-100
   head
     title RailsProject64
     meta name="viewport" content="width=device-width,initial-scale=1"
@@ -9,7 +9,29 @@ html
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
 
-  body
-    .container
-      nav
-      = yield
+  body.d-flex.flex-column.h-100
+    header
+      .container-fluid
+        nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+          .container-fluid
+            a.navbar-brand
+              | Fixed navbar
+            ul.navbar-nav.me-auto.mb-2.mb-md-0
+              li.nav-item
+                a.nav-link.active
+                  | Home
+              li.nav-item
+                a.nav-link
+                  | Link
+              li.nav-item
+                a.nav-link.disabled
+                  | Disabled
+
+    main.flex-shrink-0
+      .container
+        = yield
+
+    footer.footer.mt-auto.py-3.bg-light
+      div.container
+        span.text-muted
+          | Place sticky footer content here.
