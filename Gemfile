@@ -68,8 +68,8 @@ group :development do
   # gem "spring"
 end
 
-gem 'pg'
 group :production do
+  gem 'pg'
 end
 
 group :test do
@@ -82,6 +82,7 @@ end
 gem 'devise', '~> 4.9'
 gem 'i18n', '~> 1.14'
 gem 'sentry-rails'
+gem 'stackprof'
 gem 'sentry-ruby'
 gem 'simple_form', '~> 5.3'
 gem 'slim'

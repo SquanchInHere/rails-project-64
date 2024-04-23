@@ -107,7 +107,7 @@
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.2, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v3.1.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.2.6, RVM: ruby-3.2.2) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.63.2, RVM: ruby-3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v1.63.3, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v1.31.2, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.24.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rake (v0.6.0, RVM: ruby-3.2.2) [gem]" level="application" />
@@ -123,6 +123,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.7.3, RVM: ruby-3.2.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="stackprof (v0.2.26, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.3.3, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.0, RVM: ruby-3.2.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.10.3, RVM: ruby-3.2.2) [gem]" level="application" />
