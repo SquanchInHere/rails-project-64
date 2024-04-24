@@ -2,8 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+      branches: [ "main" ]
 
 jobs:
   build:
@@ -11,18 +12,22 @@ jobs:
 
     steps:
       - name: Set up Ruby 3.x
-        uses: ruby/setup-ruby@v1
+        uses: actions/checkout@v3
         with:
           ruby-version: 3.2.2
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: ./make install
+      - name: Install bundler dependencies
+        run: make install
+
+      - name: Run yarn install
+        run: make yarn_install
 
       - name: Run Rubocop
-        run: ./make lint
+        run: make lint_rubocop
 
       - name: Run Slim Lint
-        run: ./make slim_lint
+        run: make lint_slim
 
       - name: Run tests
-        run: ./make test
+        run: make test

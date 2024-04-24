@@ -4,11 +4,38 @@ source 'https://rubygems.org'
 
 ruby '3.2.2'
 
+gem 'annotate'
+
+gem 'devise', '~> 4.9'
+
+gem 'colorize'
+
+gem 'faker'
+
+gem 'slim-rails'
+
+gem 'sentry-rails'
+
+gem 'sentry-ruby'
+
+gem 'simple_form', '~> 5.3'
+
+gem 'bcrypt', '~> 3.1'
+
+gem 'ancestry', '~> 4.3'
+
+gem 'minitest-power_assert'
+
+gem 'rake', '13.0.6'
+
+gem 'rubocop'
+
+gem 'rubocop-rails'
+
+gem 'slim_lint'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.2'
-gem 'rubocop'
-gem 'rubocop-rails'
-gem 'rubocop-rake'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -52,13 +79,12 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'faker'
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'sqlite3', '~> 1.4'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -75,17 +101,9 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'minitest-power_assert'
   gem 'selenium-webdriver'
 end
 
-gem 'devise', '~> 4.9'
 gem 'i18n', '~> 1.14'
-gem 'sentry-rails'
 gem 'stackprof'
-gem 'sentry-ruby'
-gem 'simple_form', '~> 5.3'
 gem 'slim'
-gem 'slim_lint'
-gem 'slim-rails'
-

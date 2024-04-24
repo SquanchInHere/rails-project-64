@@ -1,9 +1,14 @@
-
 install:
 	bundle install
-lint:
-	rubocop
-slim_lint:
-	bin/rails slim_lint
+
+yarn_install:
+	yarn install
+
+lint_rubocop:
+	bundle exec rake lint:rubocop
+
+lint_slim:
+	bundle exec rake lint:slim
+
 test:
 	bin/rails test
