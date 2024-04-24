@@ -17,6 +17,9 @@ jobs:
           ruby-version: 3.2.2
           bundler-cache: true
 
+      - name: Install bundler
+        run: gem install bundler
+
       - name: Install bundler dependencies
         run: make install
 
