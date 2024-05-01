@@ -105,5 +105,5 @@ group :test do
 end
 
 gem 'i18n', '~> 1.14'
-gem 'stackprof'
 gem 'slim'
+gem 'stackprof'

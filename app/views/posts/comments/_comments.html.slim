@@ -1,0 +1,8 @@
+.lead.mt-3
+  span
+    = t('comment.all.title')
+
+  = render 'posts/comments/form', post:, comments:, parent_id: nil
+  - comments.each do |comment|
+    - if comment.root?
+      = render 'posts/comments/node', post:, comment: comment

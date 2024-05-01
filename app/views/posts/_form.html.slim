@@ -1,11 +1,8 @@
 = simple_form_for(@post) do |f|
-  = f.error_notification
-  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
-
   .form-inputs
-    = f.input :title
-    = f.input :body
-    = f.association :category, collection: Category.all
+    = f.input :title, hint: t('post.form.hint.title'), label: t('post.attributes.title.label')
+    = f.input :body, hint: t('post.form.hint.body'), label: t('post.attributes.body.label')
+    = f.association :category, collection: Category.all, required: true, label: t('post.attributes.category.label')
 
   .form-actions
-    = f.button :submit
+    = f.submit t('post.btn.create'), class: 'btn btn-primary'

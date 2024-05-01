@@ -10,19 +10,19 @@ html.h-100
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
 
   body.d-flex.flex-column.h-100
-    header
-      = render 'layouts/navigation/nav'
+    = render 'layouts/navigation/nav'
 
     main.flex-shrink-0
-      .container
-        p.notice
-          = notice
-        p.alert
-          = alert
+      .container.my-4
+        = render 'layouts/navigation/bread_crumb'
+
+        - if flash[:notice]
+          .alert.alert-info = flash[:notice]
+        - if flash[:alert]
+          .alert.alert-danger = flash[:alert]
 
         = yield
 
-    footer.footer.mt-auto.py-3.bg-light
-      div.container
+    footer.footer.mt-auto.py-3
+      .container
         span.text-muted
-          | Place sticky footer content here.

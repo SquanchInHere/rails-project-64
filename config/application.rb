@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -23,6 +25,7 @@ module RailsProject64
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    Rails.application.credentials.config[:key_path] = 'config/master.key'
+    config.i18n.available_locales = %i[ru en]
+    config.i18n.default_locale = :ru
   end
 end

@@ -1,0 +1,18 @@
+.card.mt-2.rounded-0
+  .card-header.border-0
+    span.me-2
+      = comment.user.email
+    span.fs-6.text-muted
+      = l(comment.created_at, format: :custom)
+  .card-body.border-0
+    = comment.content
+  .card-footer.border-0
+    = link_to t('comment.link.answer'), '#',
+            data: { 'bs-target' => "#response_comment-#{comment.id}", 'bs-toggle' => 'collapse' },
+            class: 'fs-6 text-decoration-underline text-lowercase'
+    .ms-2.collapse id="response_comment-#{comment.id}"
+      = render 'posts/comments/form', post:, parent_id: comment.id
+
+    - if comment.children?
+      - comment.children.each do |child|
+        = render 'posts/comments/node', post:, comment: child

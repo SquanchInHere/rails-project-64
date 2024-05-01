@@ -1,10 +1,18 @@
-p style="color: green" = notice
+.row.justify-content-center.mt-4
+  article.col-12
+    h1.mb-4.mb-lg-5
+      = @post.title
+    p
+      = @post.body
+    .d-flex.justify-content-between.mt-5
+      #post-section
+        span.me-2
+          = @post.user.email
+        span.me-2
+          = distance_of_time_in_words(@post.created_at, Time.current)
+      #likes-section
+        span.me-2
+          = t('post.liked', likes_count: likes_count(@post))
 
-== render @post
-
-div
-  => link_to "Edit this post", edit_post_path(@post)
-  '|
-  =< link_to "Back to posts", root_path
-
-  = button_to "Destroy this post", @post, method: :delete
+        = render 'posts/likes/like_links', post: @post, liked_by_like: @liked_by_like
+  = render 'posts/comments/comments', post: @post, comments: @post.comments

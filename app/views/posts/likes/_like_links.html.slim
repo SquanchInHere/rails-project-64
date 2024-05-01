@@ -1,0 +1,6 @@
+- if liked_by_like
+  = link_to post_like_path(post, id: my_like(post, current_user)), data: { turbo_method: :delete }, class: 'link-dark' do
+    i.bi.bi-hand-thumbs-up-fill
+- else
+  = link_to post_likes_path(post), data: { turbo_method: :post }, class: 'link-dark' do
+    i.bi.bi-hand-thumbs-up

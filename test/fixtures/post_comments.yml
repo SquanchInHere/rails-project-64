@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+root:
+  content: <%= Faker::Lorem.paragraph %>
+  user: one
+  post: one
+  ancestry: /
+
+nested:
+  content: <%= Faker::Lorem.paragraph %>
+  user: one
+  post: one
+  ancestry: <%= ActiveRecord::FixtureSet.identify(:root) %>
+

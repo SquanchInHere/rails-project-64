@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  body: MyText
+  body: <%= 'some string body for POST one ' * 10 %>
   user: one
   category: one
 
 two:
   title: MyString
-  body: MyText
+  body: <%= 'some string body for POST two ' * 10 %>
   user: two
   category: two
