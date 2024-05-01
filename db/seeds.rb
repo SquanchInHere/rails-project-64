@@ -37,5 +37,3 @@ categories = Category.all
     post.comments.create(content: 'тестовый комментарий вложенный', user:, parent: comment)
   end
 end
-
-
