@@ -27,8 +27,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
                                     category_id: @post.category_id,
                                     title: @post.title,
                                     user_id: @post.user_id
-                                  }
-      }
+                                  } }
     end
 
     assert_redirected_to post_url(Post.last)
