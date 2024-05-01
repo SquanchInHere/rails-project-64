@@ -1,7 +1,8 @@
 header.container.mb-2
   nav.d-flex.flex-wrap.align-items-center.py-2.border-bottom
     .navbar.navbar-expand-md.navbar-light.me-auto
-      = link_to 'Test', root_path, class: 'navbar-brand me-md-4'
+      = link_to root_path, class: 'navbar-brand me-md-4' do
+        = image_tag 'hexlet_logo.jpg', width: 30
     ul.nav.nav-pills
       - if current_user.present?
         li.nav-item.me-2.d-flex.align-items-center
