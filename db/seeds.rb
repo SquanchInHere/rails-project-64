@@ -12,6 +12,30 @@ require 'faker'
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-4.times do
+3.times do
   Category.create(name: Faker::DcComics.title)
 end
+categories = Category.all
+
+3.times do
+  user = User.create(
+    email: Faker::Internet.email,
+    password: 'secret',
+    password_confirmation: 'secret'
+  )
+
+  2.times do
+    post = user.posts.create(
+      title: Faker::DcComics.villain,
+      body: Faker::Lorem.paragraph_by_chars(number: 255),
+      category_id: categories.sample.id
+    )
+
+    post.likes.create(user:)
+
+    comment = post.comments.create(content: 'тестовый комментарий', user:)
+    post.comments.create(content: 'тестовый комментарий вложенный', user:, parent: comment)
+  end
+end
+
+
