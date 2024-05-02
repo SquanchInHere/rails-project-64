@@ -5,4 +5,4 @@
   = render 'posts/comments/form', post:, comments:, parent_id: nil
   - comments.each do |comment|
     - if comment.root?
-      = render 'posts/comments/node', post:, comment: comment
+      = render 'posts/comments/node', post:, comment:
