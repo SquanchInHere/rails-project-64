@@ -3,11 +3,11 @@
 one:
   title: MyString
   body: <%= 'some string body for POST one ' * 10 %>
-  user: one
+  creator: one
   category: one
 
 two:
   title: MyString
   body: <%= 'some string body for POST two ' * 10 %>
-  user: two
+  creator: two
   category: two
