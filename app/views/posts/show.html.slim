@@ -7,7 +7,7 @@
     .d-flex.justify-content-between.mt-5
       #post-section
         span.me-2
-          = @post.user.email
+          = @post.creator.email
         span.me-2
           = distance_of_time_in_words(@post.created_at, Time.current)
       #likes-section
