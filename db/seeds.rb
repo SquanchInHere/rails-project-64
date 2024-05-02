@@ -30,10 +30,11 @@ categories = Category.all
       body: Faker::Lorem.paragraph_by_chars(number: 255),
       category_id: categories.sample.id
     )
+    if post.save
+      post.likes.create(user:)
 
-    post.likes.create(user:)
-
-    comment = post.comments.create(content: 'тестовый комментарий', user:)
-    post.comments.create(content: 'тестовый комментарий вложенный', user:, parent: comment)
+      comment = post.comments.create(content: 'тестовый комментарий', user:)
+      post.comments.create(content: 'тестовый комментарий вложенный', user:, parent: comment)
+    end
   end
 end
