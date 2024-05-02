@@ -12,7 +12,7 @@ require 'faker'
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-3.times do
+2.times do
   Category.create(name: Faker::DcComics.title)
 end
 categories = Category.all
