@@ -12,3 +12,15 @@ lint_slim:
 
 test:
 	bin/rails test
+
+drop_db:
+	DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:drop
+
+db_migrate:
+	bundle exec rails db:create db:migrate db:seed
+
+compile_assets:
+	bundle exec rails assets:precompile
+
+clear_assets:
+	bundle exec rails assets:clean
