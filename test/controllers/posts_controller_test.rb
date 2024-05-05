@@ -40,9 +40,9 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should destroy post' do
     sign_in users(:one)
-    debugger
+    id = @post.id
     delete post_url(@post)
-    post = Post.find_by(id: @post.id)
+    post = Post.find_by(id:)
 
     assert_nil post
   end
