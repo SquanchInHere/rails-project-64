@@ -27,7 +27,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
                                   title: @post.title,
                                   user_id: @post.user_id
                                 } }
-    #debugger
+
     new_post = Post.find(@post.id)
 
     assert { new_post.present? }
