@@ -5,7 +5,7 @@ module PostsHelper
     post.likes.user_likes(user).first
   end
 
-  def likes_count(post)
-    post.likes.count
-  end
+  # def likes_count(post)
+  #   post.likes.count
+  # end
 end

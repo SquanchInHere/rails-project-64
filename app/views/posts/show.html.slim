@@ -12,7 +12,7 @@
           = distance_of_time_in_words(@post.created_at, Time.current)
       #likes-section
         span.me-2
-          = t('post.liked', likes_count: likes_count(@post))
+          = t('post.liked', likes_count: @post.likes_count)
 
         = render 'posts/likes/like_links', post: @post, liked_by_like: @liked_by_like
   = render 'posts/comments/comments', post: @post, comments: @post.comments

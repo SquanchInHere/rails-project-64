@@ -11,4 +11,5 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { minimum: 5, maximum: 255 }
 
   scope :user_like, ->(user_id) { likes.where(user_id:) }
+  scope :with_association, -> { includes(:category, :creator).order(created_at: :desc) }
 end

@@ -12,7 +12,7 @@ h1
             = post.body
           .text-right.small.text-muted.mt-auto
             span.me-2
-              = t('post.liked', likes_count: likes_count(post))
+              = t('post.liked', likes_count: post.likes_count)
             span.me-2
               = distance_of_time_in_words(post.created_at, Time.current)
             span

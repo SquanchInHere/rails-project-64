@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.with_association
   end
 
   # GET /posts/1 or /posts/1.json
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_post
-    @post = Post.find(params[:id])
+    @post = Post.with_association.find(params[:id])
   end
 
   def exists_likes
