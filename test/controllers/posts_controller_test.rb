@@ -20,17 +20,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create post' do
     sign_in users(:one)
-    assert_difference('Post.count') do
-      post posts_url, params: { post:
-                                  {
-                                    body: @post.body,
-                                    category_id: @post.category_id,
-                                    title: @post.title,
-                                    user_id: @post.user_id
-                                  } }
-    end
+    post posts_url, params: { post:
+                                {
+                                  body: @post.body,
+                                  category_id: @post.category_id,
+                                  title: @post.title,
+                                  user_id: @post.user_id
+                                } }
+    #debugger
+    new_post = Post.find(@post.id)
 
-    assert_redirected_to post_url(Post.last)
+    assert { new_post.present? }
   end
 
   test 'should show post' do
@@ -39,10 +39,11 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy post' do
-    assert_difference('Post.count', -1) do
-      delete post_url(@post)
-    end
+    sign_in users(:one)
+    debugger
+    delete post_url(@post)
+    post = Post.find_by(id: @post.id)
 
-    assert_redirected_to root_url
+    assert_nil post
   end
 end

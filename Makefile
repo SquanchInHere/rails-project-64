@@ -17,7 +17,10 @@ drop_db:
 	DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:drop
 
 db_migrate:
-	bundle exec rails db:create db:migrate db:seed
+	bundle exec rails db:create db:migrate
+
+db_seed:
+	bundle exec rails db:seed
 
 compile_assets:
 	bundle exec rails assets:precompile

@@ -5,7 +5,9 @@ module PostsHelper
     post.likes.user_likes(user).first
   end
 
-  # def likes_count(post)
-  #   post.likes.count
-  # end
+  def body_preview(body)
+    sliced = body.slice(0, 200)
+
+    sliced.size < body.size ? "#{sliced}..." : body
+  end
 end

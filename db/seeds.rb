@@ -27,7 +27,7 @@ categories = Category.all
   2.times do
     post = user.posts.create(
       title: Faker::DcComics.villain,
-      body: Faker::Lorem.paragraph_by_chars(number: 255),
+      body: Faker::Lorem.paragraph_by_chars(number: 400),
       category_id: categories.sample.id
     )
     next unless post.save
