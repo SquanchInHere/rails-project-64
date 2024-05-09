@@ -1,4 +1,4 @@
-- unless %w[index new].include?(action_name)
+- if !%w[index new create].include?(action_name) && controller_name == 'posts'
   ol.breadcrumb
     li.breadcrumb-item
       = link_to 'Все посты', root_path
